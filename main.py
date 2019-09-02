@@ -4,6 +4,7 @@ from collections import OrderedDict
 
 def main():
 
+  # Final dictionary
   dictionary = {}
 
   # Open the csv file
@@ -33,7 +34,9 @@ def main():
 
     # Save dictionary to json file
     with open('dict.json', 'w') as outfile:
+        # Create an ordered collection
         orderedDictionary = OrderedDict(sorted(dictionary.iteritems()))
+        # Save json to file
         json.dump(orderedDictionary, outfile, ensure_ascii=False)
 
 if __name__== "__main__":
